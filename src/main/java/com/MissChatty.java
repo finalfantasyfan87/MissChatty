@@ -10,7 +10,6 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class MissChatty {
-static String name = "com.MissChatty";
     public static void main(String[] args) {
 
         String resourcesPath = getResourcesPath();
@@ -23,6 +22,12 @@ static String name = "com.MissChatty";
 while(true){
     System.out.println("User:");
     textLine = IOUtils.readInputTextLine();
+    if (textLine.contains("quit")) {
+
+        System.exit(0);
+    }
+
+
     String response = chatSession.multisentenceRespond(textLine);
     System.out.println("Bot : " + response);
 }
